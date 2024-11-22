@@ -33,6 +33,7 @@
                 if (attempts >= maxAttempts) {
                     alert('Incorrect code entered multiple times. Please contact me.');
                 } else {
+                    alert('Incorrect code, please try again. Attempt ' + attempts + ' of ' + maxAttempts);
                     checkPassword();
                 }
             }
