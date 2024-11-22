@@ -11,10 +11,10 @@
         var attempts = 0; // Counter for attempts
         var maxAttempts = 5; // Maximum allowed attempts
     
-        var task1 = "12345";
-        var task2 = "56789";
-        var task3 = "98765";
-        var task4 = "54321";
+        var task1 = "UrPWGDWE";
+        var task2 = "EpsxTBKn";
+        var task3 = "eT2xXLHd";
+        var task4 = "7ApI8NyC";
     
         function checkPassword() {
             password = prompt('Please enter the code given:', '');
@@ -34,11 +34,11 @@
                     alert('Incorrect code entered multiple times. Please contact me.');
                 } else {
                     alert('Incorrect code, please try again. Attempt ' + (attempts + 1) + ' of ' + maxAttempts);
+                    checkPassword();
                 }
             }
         }
     
-        checkPassword(); // Call the function to check password
     </script>
     
            
