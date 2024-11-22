@@ -6,39 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <script language="JavaScript">
-        var password;
-        var attempts = 0; // Counter for attempts
-        var maxAttempts = 5; // Maximum allowed attempts
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var attempts = 0; // Counter for attempts
+            var maxAttempts = 5; // Maximum allowed attempts
     
-        var task1 = "UrPWGDWE";
-        var task2 = "EpsxTBKn";
-        var task3 = "eT2xXLHd";
-        var task4 = "7ApI8NyC";
+            var task1 = "UrPWGDWE";
+            var task2 = "EpsxTBKn";
+            var task3 = "eT2xXLHd";
+            var task4 = "7ApI8NyC";
     
-        function checkPassword() {
-            password = prompt('Please enter po the code given to keep track lang po:', '');
+            var redirectURLs = {
+                [task1]: "Task_1.pdf",
+                [task2]: "Task_2.pdf",
+                [task3]: "Task_3.pdf",
+                [task4]: "Task_4.pdf"
+            };
     
-            // Check if the password matches any task
-            if (password === task1) {
-                window.location.href = "Task_1.pdf" // Corrected the typo and proper redirect
-            } else if (password === task2) {
-                window.location.href = "Task_2.pdf";
-            } else if (password === task3) {
-                window.location.href = "Task_3.pdf";
-            } else if (password === task4) {
-                window.location.href = "Task_4.pdf";
-            } else {
-                attempts++; // Increment attempts if the password is wrong
-                if (attempts >= maxAttempts) {
-                    alert('Incorrect code entered multiple times. Please contact me.');
+            while (attempts < maxAttempts) {
+                var password = prompt('Please enter po the code given to keep track lang po:', '');
+    
+                // Check if the entered password matches any of the tasks
+                if (redirectURLs[password]) {
+                    window.location.href = redirectURLs[password]; // Redirect to the correct PDF
+                    return; // Stop the loop and execution after a successful redirect
                 } else {
+                    attempts++; // Increment attempts if the password is wrong
                     alert('Incorrect code, please try again. Attempt ' + attempts + ' of ' + maxAttempts);
-                    checkPassword();
                 }
             }
-        }
     
+            // If we exit the loop, the maximum attempts have been reached
+            alert('Incorrect code entered multiple times. Please contact me.');
+        });
     </script>
     
            
