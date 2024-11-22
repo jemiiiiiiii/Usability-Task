@@ -17,7 +17,7 @@
         var task4 = "7ApI8NyC";
     
         function checkPassword() {
-            password = prompt('Please enter the code given:', '');
+            password = prompt('Please enter po the code given to keep track lang po:', '');
     
             // Check if the password matches any task
             if (password === task1) {
@@ -33,7 +33,6 @@
                 if (attempts >= maxAttempts) {
                     alert('Incorrect code entered multiple times. Please contact me.');
                 } else {
-                    alert('Incorrect code, please try again. Attempt ' + (attempts + 1) + ' of ' + maxAttempts);
                     checkPassword();
                 }
             }
